@@ -16,15 +16,25 @@
         <div class="card-body">
             <h3 class="card-title">Volleyball Score Kepper</h3>
             <p class="card-text">Click the buttons to add or reset points.</p>
-            <h2 class="card-title"><span id="t1Display">0</span> to <span id="t2Display">0</span></h2>
-            <button type="button" id="t1Btn" class="btn btn-primary">+1 Team one</button>
-            <button type="button" id="t2Btn" class="btn btn-success">+1 Team two</button>
-            <button type="button" id="resetBtn" class="btn btn-danger">Danger</button>
+            <h2 class="text-center"><span id="t1Display">0</span> to <span id="t2Display">0</span></h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" id="t1Btn" class="btn btn-primary">+1 Team One</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="t2Btn" class="btn btn-success">+1 Team Two</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="button" id="resetBtn" class="btn btn-danger mt-2">Reset</button>
+                </div>
+
+            </div>
         </div>
     </div>
 
     <script src="main.js"></script>
 </body>
-
 
 </html>
