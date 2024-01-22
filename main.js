@@ -6,18 +6,35 @@ const resetBtn = document.querySelector('#resetBtn')
 
 let t1Score = 0
 let t2Score = 0
+let winningScore = 5
+let isGameOver = false
+
 
 t1Btn.addEventListener('click', () => {
-    t1Score++
-    t1Display.textContent = t1Score
+    if (isGameOver === false) {
+        if (t1Score !== winningScore) {
+            t1Score++
+            t1Display.textContent = t1Score
+        } else {
+            isGameOver = true
+        }
+    }
 })
 
 t2Btn.addEventListener('click', () => {
-    t2Score++
-    t2Display.textContent = t2Score
+    if (isGameOver === false) {
+        if (t2Score !== winningScore) {
+            t2Score++
+            t2Display.textContent = t2Score
+        } else {
+            isGameOver = true
+        }
+    }
 })
 
+
 resetBtn.addEventListener('click', () => {
+    isGameOver = false
     t1Score = 0
     t1Display.textContent = t1Score
     t2Score = 0
