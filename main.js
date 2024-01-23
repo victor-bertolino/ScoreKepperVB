@@ -12,10 +12,9 @@ let isGameOver = false
 
 t1Btn.addEventListener('click', () => {
     if (isGameOver === false) {
-        if (t1Score !== winningScore) {
-            t1Score++
-            t1Display.textContent = t1Score
-        } else {
+        t1Score++
+        t1Display.textContent = t1Score
+        if (t1Score === winningScore) {
             isGameOver = true
         }
     }
@@ -23,10 +22,9 @@ t1Btn.addEventListener('click', () => {
 
 t2Btn.addEventListener('click', () => {
     if (isGameOver === false) {
-        if (t2Score !== winningScore) {
-            t2Score++
-            t2Display.textContent = t2Score
-        } else {
+        t2Score++
+        t2Display.textContent = t2Score
+        if (t2Score === winningScore) {
             isGameOver = true
         }
     }
