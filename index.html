@@ -5,34 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score Keeper VB</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body style="background-color: white;">
+<body>
 
-    <div class="card" style="width: 18rem;">
-        <img src="imgs/volleyball.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h3 class="card-title">Volleyball Score Kepper</h3>
-            <p class="card-text">Click the buttons to add or reset points.</p>
-            <h2 class="text-center"><span id="t1Display">0</span> to <span id="t2Display">0</span></h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <button type="button" id="t1Btn" class="btn btn-primary">+1 Team One</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" id="t2Btn" class="btn btn-success">+1 Team Two</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <button type="button" id="resetBtn" class="btn btn-danger mt-2">Reset</button>
-                </div>
 
-            </div>
-        </div>
-    </div>
+    <h3>Volleyball Score Kepper</h3>
+    <p>Click the buttons to add or reset points.</p>
+    <h2><span id="t1Display">0</span> to <span id="t2Display">0</span></h2>
+    <button id="t1Btn">+1 Team One</button>
+    <button id="t2Btn">+1 Team Two</button>
+    <button id="resetBtn">Reset</button>
 
     <script src="main.js"></script>
 </body>
