@@ -3,12 +3,17 @@ let t2Display = document.querySelector('#t2Display')
 const t1Btn = document.querySelector('#t1Btn')
 const t2Btn = document.querySelector('#t2Btn')
 const resetBtn = document.querySelector('#resetBtn')
+const playToBtn = document.querySelector('#playTo')
 
 let t1Score = 0
 let t2Score = 0
-let winningScore = 5
+let winningScore = 25
 let isGameOver = false
 
+playToBtn.addEventListener('change', () => {
+    winningScore = parseInt(playToBtn.value)
+    reset()
+})
 
 t1Btn.addEventListener('click', () => {
     if (isGameOver === false) {
@@ -36,12 +41,15 @@ t2Btn.addEventListener('click', () => {
     }
 })
 
-
-resetBtn.addEventListener('click', () => {
-    winningScore = 5
+function reset() {
+    winningScore = parseInt(playToBtn.value)
     isGameOver = false
     t1Score = 0
     t1Display.textContent = t1Score
     t2Score = 0
     t2Display.textContent = t2Score
+}
+
+resetBtn.addEventListener('click', () => {
+    reset()
 })
