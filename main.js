@@ -1,12 +1,18 @@
-let t1Display = document.querySelector('#t1Display')
-let t2Display = document.querySelector('#t2Display')
-const t1Btn = document.querySelector('#t1Btn')
-const t2Btn = document.querySelector('#t2Btn')
+const t1 = {
+    score: 0,
+    button: document.querySelector('#t1Btn'),
+    display: document.querySelector('#t1Display')
+}
+
+const t2 = {
+    score: 0,
+    button: document.querySelector('#t2Btn'),
+    display: document.querySelector('#t2Display')
+}
+
 const resetBtn = document.querySelector('#resetBtn')
 const playToBtn = document.querySelector('#playTo')
 
-let t1Score = 0
-let t2Score = 0
 let winningScore = 25
 let isGameOver = false
 
@@ -15,39 +21,34 @@ playToBtn.addEventListener('change', () => {
     reset()
 })
 
-t1Btn.addEventListener('click', () => {
+function updateScore(team, opponent) {
     if (isGameOver === false) {
-        t1Score++
-        t1Display.textContent = t1Score
-        if ((t1Score === (winningScore - 1)) && (t2Score === (winningScore - 1))) {
+        team.score++
+        team.display.textContent = team.score
+        if ((team.score === (winningScore - 1)) && (opponent.score === (winningScore - 1))) {
             winningScore++
         }
-        if (t1Score === winningScore) {
+        if (team.score === winningScore) {
             isGameOver = true
         }
     }
+}
+
+t1.button.addEventListener('click', () => {
+    updateScore(t1, t2)
 })
 
-t2Btn.addEventListener('click', () => {
-    if (isGameOver === false) {
-        t2Score++
-        t2Display.textContent = t2Score
-        if ((t1Score === (winningScore - 1)) && (t2Score === (winningScore - 1))) {
-            winningScore++
-        }
-        if (t2Score === winningScore) {
-            isGameOver = true
-        }
-    }
+t2.button.addEventListener('click', () => {
+    updateScore(t2, t1)
 })
 
 function reset() {
     winningScore = parseInt(playToBtn.value)
     isGameOver = false
-    t1Score = 0
-    t1Display.textContent = t1Score
-    t2Score = 0
-    t2Display.textContent = t2Score
+    t1.score = 0
+    t1.display.textContent = t1.score
+    t2.score = 0
+    t2.display.textContent = t2.score
 }
 
 resetBtn.addEventListener('click', () => {
