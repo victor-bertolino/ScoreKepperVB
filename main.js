@@ -19,7 +19,7 @@ let winningScore = 25
 let isGameOver = false
 
 playToBtn.addEventListener('change', () => {
-    winningScore = parseInt(playToBtn.value)
+    winningScore = parseInt(this.value)
     reset()
 })
 
