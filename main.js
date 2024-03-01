@@ -18,10 +18,6 @@ const playToBtn = document.querySelector('#playTo')
 let winningScore = 25
 let isGameOver = false
 
-playToBtn.addEventListener('change', () => {
-    winningScore = parseInt(this.value)
-    reset()
-})
 
 function addScore(team, opponent) {
     if (isGameOver === false) {
@@ -32,6 +28,12 @@ function addScore(team, opponent) {
         }
         if (team.score === winningScore) {
             isGameOver = true
+            team.display.classList.add('text-success')
+            opponent.display.classList.add('text-danger')
+            team.plusButton.disabled = true
+            team.minusButton.disabled = true
+            opponent.plusButton.disabled = true
+            opponent.minusButton.disabled = true
         }
     }
 }
@@ -67,10 +69,19 @@ function reset() {
     isGameOver = false
     t1.score = 0
     t1.display.textContent = t1.score
+    t1.plusButton.disabled = false
+    t1.minusButton.disabled = false
+    t1.display.classList.remove('text-success', 'text-danger')
     t2.score = 0
     t2.display.textContent = t2.score
+    t2.plusButton.disabled = false
+    t2.minusButton.disabled = false
+    t2.display.classList.remove('text-success', 'text-danger')
 }
 
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', reset)
+
+playToBtn.addEventListener('change', () => {
+    winningScore = parseInt(this.value)
     reset()
 })

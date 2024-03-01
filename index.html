@@ -23,24 +23,28 @@
                         </h1>
                         <p class="card-text">Use the button bellow to keep score.</p>
                         <label for="playTo" class="fs-4">Playing To</label>
-                        <select class="" name="playTo" id="playTo">
+
+                        <select name="playTo" id="playTo">
                             <option value="25">25</option>
                             <option value="20">20</option>
                             <option value="15">15</option>
                             <option value="10">10</option>
                         </select>
-                        <div class="btn-group my-2" role="group" aria-label="Basic outlined example">
-                            <button type="button" class="btn btn-primary" id="t1PlusBtn">+1</button>
-                            <button type="button" class="btn btn-outline-primary" disabled>Team One</button>
-                            <button type="button" class="btn btn-primary" id="t1MinusBtn">-1</button>
+                        <div class="row my-2">
+                            <div class="btn-group my-2" role="group" aria-label="Basic outlined example">
+                                <button id="t1PlusBtn" type="button" class="btn btn-primary">+1</button>
+                                <button type="button" class="btn btn-outline-primary" disabled>Team One</button>
+                                <button id="t1MinusBtn" type="button" class="btn btn-primary">-1</button>
+                            </div>
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <button id="t2PlusBtn" type="button" class="btn btn-success">+1</button>
+                                <button type="button" class="btn btn-outline-success" disabled>Team Two</button>
+                                <button id="t2MinusBtn" type="button" class="btn btn-success">-1</button>
+                            </div>
                         </div>
-                        <div class="btn-group" role="group" aria-label="Basic outlined example">
-                            <button type="button" class="btn btn-success" id="t2PlusBtn">+1</button>
-                            <button type="button" class="btn btn-outline-success" disabled>Team Two</button>
-                            <button type="button" class="btn btn-success" id="t2MinusBtn">-1</button>
-                        </div>
-                        <button id="resetBtn" type="button"
-                            class="px-md-5 d-md-block btn btn-danger btn-sm">Reset</button>
+                        <button id="resetBtn" class="my-2 py-2 py-md-3 w-100 btn btn-danger"
+                            type="button">Reset</button>
+
                     </div>
                 </div>
             </div>
